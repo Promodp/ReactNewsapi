@@ -1,15 +1,26 @@
 import React from 'react';
 
-const SingleSide = ({item}) => (
-  <div>
-    <div className="divider"></div>
-    <a href={item.url} target="_blank">
-      <div className="section">
-        <h5>{item.source.name}</h5>
-        <p>{item.title}</p>
-      </div>
-    </a>
-  </div>
-);
 
+
+class SingleSide extends React.Component{
+  render (){
+    // var sourceName = this.props.item.source.name
+    // var name = sourceName.filter(distinct);
+
+    return(
+      <div>
+      <div className="divider"></div>
+     
+        <div className="section">
+        <a href={this.props.item.url} target="_blank"><div style={{color:'orange'}}>
+   
+            <h5>{this.props.item.source.name}</h5>
+          </div>  </a>
+          <p>{this.props.item.title}</p>
+        </div>
+    
+    </div>
+    )
+  }
+}
 export default SingleSide;

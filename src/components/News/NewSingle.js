@@ -1,31 +1,38 @@
-import React from 'react';
+// import React from 'react';
 import './NewSingle.css'
-
+import * as React from "react";
 import './Message'
 
 const imageHeight = {
-  height : '171px',
+  height: '171px',
   weight: '256px'
 }
-const NewSingle = ({item}) => (
-  <div className="col s4 zoom">
-    <div className="card">
-      <div className="card-image" style = {imageHeight}>
-        <img src={item.urlToImage} alt={item.title}/>
-      </div>
-      <div className="card-content">
-      <p>{item.source.name}</p>
-      {/* <a href={} target="_blank"></a> */}
-      </div>
-      <div className="card-content" >
-        <p>{item.title}...</p>
-       
-      </div>
-      <div className="card-action">
-        <a href={item.url} target="_blank">Read Full article</a>
-      </div>
-    </div>
-  </div>
-);
 
+class NewSingle extends React.Component {
+  
+
+  render() {
+
+    return (
+
+      <div className="col s4 zoom">
+        <div className="card">
+          <div className="card-image" style={imageHeight}>
+            <img src={this.props.item.urlToImage} alt={this.props.item.title} />
+          </div>
+          <div className="card-content">
+            <p>{this.props.item.source.name}</p>
+            {/* <a href={} target="_blank"></a> */}
+          </div>
+          <div className="card-content" >
+            <p>{this.props.item.title}...</p>
+          </div>
+          <div className="card-action">
+            <a href={this.props.item.url} target="_blank">Read Full article</a>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
 export default NewSingle;
